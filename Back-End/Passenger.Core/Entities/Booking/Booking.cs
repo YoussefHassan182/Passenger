@@ -1,4 +1,4 @@
-﻿namespace Passenger.Infrastructure.Data
+﻿namespace Passenger.Core.Entities
 {
     public class Booking
     {

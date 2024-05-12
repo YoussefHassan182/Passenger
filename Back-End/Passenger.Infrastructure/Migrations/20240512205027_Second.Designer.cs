@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Passenger.Infrastructure.Data;
 
@@ -11,9 +12,10 @@ using Passenger.Infrastructure.Data;
 namespace Passenger.Infrastructure.Migrations
 {
     [DbContext(typeof(PassengerDbContext))]
-    partial class PassengerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240512205027_Second")]
+    partial class Second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

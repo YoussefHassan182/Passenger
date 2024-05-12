@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Passenger.Core.Entities;
 using Passenger.Infrastructure.EntitiesConfig.BookingEntityTypeConfig;
 using Passenger.Infrastructure.EntitiesConfig.CustomerEntityTypeConfig;
 using Passenger.Infrastructure.EntitiesConfig.TripEntityTypeConfig;

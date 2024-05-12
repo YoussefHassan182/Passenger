@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Passenger.Infrastructure.Data;
+using Passenger.Core.Entities;
+
 namespace Passenger.Infrastructure.EntitiesConfig.BookingEntityTypeConfig
 {
     public class BookingEntityTypeConfiguration : IEntityTypeConfiguration<Booking>
