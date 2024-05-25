@@ -8,20 +8,21 @@ namespace Passenger.Infrastructure.EntitiesConfig.BookingEntityTypeConfig
     {
         public void Configure(EntityTypeBuilder<Booking> builder)
         {
-            builder.HasKey(_ => _.Id);
-            builder.Property(_ => _.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Property(_ => _.TripId).IsRequired();
-            builder.Property(_=>_.CustomerId).IsRequired();
-            builder.Property(_ => _.PaymentAmount).IsRequired().HasPrecision(18, 2);
+            builder.ToTable(nameof(Booking));
+            builder.HasKey(a => a.Id);
+            builder.Property(a => a.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Property(a => a.TripId).IsRequired();
+            builder.Property(a=>a.CustomerId).IsRequired();
+            builder.Property(a => a.PaymentAmount).IsRequired().HasPrecision(18, 2);
 
-            builder.HasOne(_ => _.Trip)
+            builder.HasOne(a => a.Trip)
                 .WithMany()
-                .HasForeignKey(_ => _.TripId)
+                .HasForeignKey(a => a.TripId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
-            builder.HasOne(_ => _.Customer)
+            builder.HasOne(a => a.Customer)
                .WithMany()
-               .HasForeignKey(_ => _.CustomerId)
+               .HasForeignKey(a => a.CustomerId)
                .OnDelete(DeleteBehavior.ClientSetNull);
         }
     }

@@ -8,8 +8,9 @@ namespace Passenger.Infrastructure.EntitiesConfig.CustomerEntityTypeConfig
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
-            builder.HasKey(_ => _.Id);
-            builder.Property(_=>_.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.ToTable(nameof(Customer));
+            builder.HasKey(a => a.Id);
+            builder.Property(a=>a.Id).IsRequired().ValueGeneratedOnAdd();
         }
     }
 }
