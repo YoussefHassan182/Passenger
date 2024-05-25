@@ -8,11 +8,12 @@ namespace Passenger.Infrastructure.EntitiesConfig.TripEntityTypeConfig
     {
         public void Configure(EntityTypeBuilder<Trip> builder)
         {
-            builder.HasKey(_ => _.Id);
-            builder.Property(_=>_.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Property(_ => _.Cost).IsRequired().HasPrecision(18, 2);
-            builder.Property(_ => _.Name).IsRequired().HasMaxLength(100);
-            builder.Property(_=>_.Description).IsRequired().HasMaxLength(200);
+            builder.ToTable(nameof(Trip));
+            builder.HasKey(a => a.Id);
+            builder.Property(a=>a.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Property(a => a.Cost).IsRequired().HasPrecision(18, 2);
+            builder.Property(a => a.Name).IsRequired().HasMaxLength(100);
+            builder.Property(a=>a.Description).IsRequired().HasMaxLength(200);
         }
     }
 }

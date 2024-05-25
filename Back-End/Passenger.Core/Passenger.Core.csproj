@@ -7,9 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.0" />
+
     <Folder Include="Interfaces\CustomerRepository\" />
     <Folder Include="Interfaces\BookingRepository\" />
     <Folder Include="Interfaces\TripRepository\" />
+
   </ItemGroup>
 
 </Project>

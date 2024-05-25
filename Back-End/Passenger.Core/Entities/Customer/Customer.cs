@@ -1,11 +1,12 @@
-﻿namespace Passenger.Core.Entities
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace Passenger.Core.Entities
 {
-    public class Customer
+    public class Customer : IdentityUser
     {
-        public int Id { set; get; }
-        public string Name { set; get; }
-        public string Address { set; get; }
-        public string Phone { set; get; }
+        public string FirstName { set; get; }
+        public string LastName { set; get; }
+        public string? Address { set; get; }
         public IList<Booking> Bookings { set; get; }
 
     }
